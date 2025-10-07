@@ -1,0 +1,14 @@
+//Q2 The Lost Soldier
+//Find the missing number from 0..n given n numbers with one missing.
+public class Q2_The_Lost_Soldier {
+    public static int missingSoldier(int[] arr, int n) {
+        long total = (long)n * (n + 1) / 2;
+        long sum = 0;
+        for (int a : arr) sum += a;
+        return (int)(total - sum);
+    }
+    public static void main(String[] args) {
+        int[] arr = {0,1,2,4,5};
+        System.out.println(missingSoldier(arr, 5)); // 3
+    }
+}
