@@ -1,0 +1,13 @@
+//Q14 The Dragon's Roar
+//Print numbers 1..n using recursion.
+
+public class Q14_The_Dragons_Roar {
+    public static void print1toN(int n){
+        if(n==0) return;
+        print1toN(n-1);
+        System.out.print(n + " ");
+    }
+    public static void main(String[] args){
+        print1toN(5); // 1 2 3 4 5
+    }
+}
