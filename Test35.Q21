@@ -1,0 +1,16 @@
+//Q21 Lower Bound (first index >= target)
+
+public class Q21_Lower_Bound_Index {
+    public static int lowerBound(int[] a, int target){
+        int l=0,r=a.length;
+        while(l<r){
+            int mid = l + (r-l)/2;
+            if(a[mid] < target) l = mid+1; else r = mid;
+        }
+        return l; // may be n if not found/insertion pos
+    }
+    public static void main(String[] args){
+        System.out.println(lowerBound(new int[]{1,2,4,6,6,8}, 6)); // 3
+        System.out.println(lowerBound(new int[]{1,2,4,6,6,8}, 5)); // 3
+    }
+}
