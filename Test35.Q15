@@ -1,0 +1,13 @@
+//Q15 The Hidden Chamber
+//Sum of array using recursion.
+
+public class Q15_The_Hidden_Chamber {
+    public static int sumRec(int[] a, int idx){
+        if(idx==a.length) return 0;
+        return a[idx] + sumRec(a, idx+1);
+    }
+    public static void main(String[] args){
+        int[] a = {1,2,3,4};
+        System.out.println(sumRec(a,0)); // 10
+    }
+}
