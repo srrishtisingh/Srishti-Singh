@@ -1,0 +1,13 @@
+//Q5 The King's Parade
+//Check if array is non-decreasing.
+
+public class Q5_The_Kings_Parade {
+    public static boolean isNonDecreasing(int[] arr) {
+        for (int i=1;i<arr.length;i++) if (arr[i] < arr[i-1]) return false;
+        return true;
+    }
+    public static void main(String[] args) {
+        System.out.println(isNonDecreasing(new int[]{1,3,5,7})); // true
+        System.out.println(isNonDecreasing(new int[]{3,2,1})); // false
+    }
+}
