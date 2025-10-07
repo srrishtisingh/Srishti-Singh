@@ -1,0 +1,13 @@
+//Q24 Floor (largest element <= target). Return value or -1 if none.
+
+public class Q24_Floor_Value {
+    public static int floor(int[] a, int target){
+        int idx = new Q22_Upper_Bound_Index().upperBound(a, target);
+        if(idx==0) return -1;
+        return a[idx-1];
+    }
+    public static void main(String[] args){
+        System.out.println(floor(new int[]{1,2,4,6,6,8}, 5)); // 4
+        System.out.println(floor(new int[]{1,2,4,6,6,8}, 0)); // -1
+    }
+}
