@@ -1,0 +1,12 @@
+//Q17 The Farmer's Basket
+//Return -1 if key not found, else index.
+
+public class Q17_The_Farmers_Basket {
+    public static int exists(int[] a, int key){
+        for(int i=0;i<a.length;i++) if(a[i]==key) return i;
+        return -1;
+    }
+    public static void main(String[] args){
+        System.out.println(exists(new int[]{10,20,30}, 25)); // -1
+    }
+}
