@@ -1,0 +1,12 @@
+//Q20 The Treasure Chest
+//Find last occurrence of key in array.
+
+public class Q20_The_Treasure_Chest_Last_Occurrence {
+    public static int lastOcc(int[] a, int key){
+        for(int i=a.length-1;i>=0;i--) if(a[i]==key) return i;
+        return -1;
+    }
+    public static void main(String[] args){
+        System.out.println(lastOcc(new int[]{1,2,2,2,3}, 2)); // 3
+    }
+}
