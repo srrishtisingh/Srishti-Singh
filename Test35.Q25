@@ -1,0 +1,13 @@
+//Q25 The Treasure Map (Linear Search in 2D)
+//Return Yes if target exists in matrix.
+
+public class Q25_The_Treasure_Map_Linear_Search {
+    public static boolean exists(int[][] mat, int target){
+        for (int i=0;i<mat.length;i++) for (int j=0;j<mat[0].length;j++) if(mat[i][j]==target) return true;
+        return false;
+    }
+    public static void main(String[] args){
+        int[][] m = {{1,2,3},{4,5,6},{7,8,9}};
+        System.out.println(exists(m,5) ? "Yes" : "No"); // Yes
+    }
+}
