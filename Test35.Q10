@@ -1,0 +1,22 @@
+//Q10 The Rainwater Pond
+//Count connected components of 1s (8-direction) in a grid.
+
+public class Q10_The_Rainwater_Pond {
+    static int n,m;
+    static void dfs(int i,int j,int[][] grid, boolean[][] vis){
+        if(i<0||j<0||i>=n||j>=m||vis[i][j]||grid[i][j]==0) return;
+        vis[i][j]=true;
+        for(int di=-1;di<=1;di++) for(int dj=-1;dj<=1;dj++) if(!(di==0&&dj==0)) dfs(i+di,j+dj,grid,vis);
+    }
+    public static int ponds(int[][] grid){
+        n=grid.length; m=grid[0].length;
+        boolean[][] vis=new boolean[n][m];
+        int cnt=0;
+        for(int i=0;i<n;i++) for(int j=0;j<m;j++) if(!vis[i][j] && grid[i][j]==1){ dfs(i,j,grid,vis); cnt++; }
+        return cnt;
+    }
+    public static void main(String[] args){
+        int[][] g = {{1,0,1},{0,1,0},{1,0,1}};
+        System.out.println(ponds(g)); // 5
+    }
+}
