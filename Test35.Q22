@@ -1,0 +1,15 @@
+//Q22 Upper Bound (first index > target)
+
+public class Q22_Upper_Bound_Index {
+    public static int upperBound(int[] a, int target){
+        int l=0,r=a.length;
+        while(l<r){
+            int mid = l + (r-l)/2;
+            if(a[mid] <= target) l = mid+1; else r = mid;
+        }
+        return l; // n if none > target
+    }
+    public static void main(String[] args){
+        System.out.println(upperBound(new int[]{1,2,4,6,6,8}, 6)); // 5
+        System.out.println(upperBound(new int[]{1,2,4,6,6,8}, 7)); // 5
+    }
