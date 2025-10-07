@@ -1,0 +1,12 @@
+//Q16 The Ancient Scroll
+//Linear search for key, return index or -1.
+
+public class Q16_The_Ancient_Scroll {
+    public static int find(int[] a, int key){
+        for(int i=0;i<a.length;i++) if(a[i]==key) return i;
+        return -1;
+    }
+    public static void main(String[] args){
+        System.out.println(find(new int[]{2,5,7,8}, 7)); // 2
+    }
+}
