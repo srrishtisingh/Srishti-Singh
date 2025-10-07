@@ -1,0 +1,12 @@
+//Q19 The Archer's Range
+//Find first occurrence of key in array (linear or binary if sorted).
+
+public class Q19_The_Archers_Range_First_Occurrence {
+    public static int firstOcc(int[] a, int key){
+        for(int i=0;i<a.length;i++) if(a[i]==key) return i;
+        return -1;
+    }
+    public static void main(String[] args){
+        System.out.println(firstOcc(new int[]{1,2,2,2,3}, 2)); // 1
+    }
+}
