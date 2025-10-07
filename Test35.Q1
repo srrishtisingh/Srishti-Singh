@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class KingsFeastMax {
+    static int findMax(int plates[]) {
+        int maximum = plates[0];
+        for(int i = 1; i < plates.length; i++) {
+            if(plates[i] > maximum) {
+                maximum = plates[i];
+            }
+        }
+        return maximum;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int data[] = new int[n];
+        for(int i = 0; i < n; i++) {
+            data[i] = sc.nextInt();
+        }
+        System.out.print(findMax(data));
+    }
+}
