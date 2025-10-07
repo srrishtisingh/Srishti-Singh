@@ -1,0 +1,19 @@
+//Q27 Battle Formation (binary search on flattened sorted 2D matrix)
+
+public class Q27_Battle_Formation_Binary_Flattened {
+    public static boolean exists(int[][] mat, int target){
+        int n = mat.length, m = mat[0].length;
+        int l=0, r=n*m-1;
+        while(l<=r){
+            int mid = (l+r)/2;
+            int val = mat[mid/m][mid%m];
+            if(val==target) return true;
+            if(val < target) l = mid+1; else r = mid-1;
+        }
+        return false;
+    }
+    public static void main(String[] args){
+        int[][] mat = {{1,3,5},{7,10,11},{16,20,30}};
+        System.out.println(exists(mat,10)); // true
+    }
+}
