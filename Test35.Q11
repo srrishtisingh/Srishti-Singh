@@ -1,0 +1,19 @@
+//Q11 Tower of Temples (Hanoi)
+//Print number of moves required (2^n - 1) and show moves for small n recursively.
+
+public class Q11_Tower_of_Temples_Hanoi {
+    public static long movesCount(int n){
+        return (1L<<n) - 1;
+    }
+    // Optional: print moves for small n
+    public static void hanoi(int n, char src, char aux, char dst){
+        if(n==0) return;
+        hanoi(n-1, src, dst, aux);
+        System.out.println("Move disk " + n + " from " + src + " to " + dst);
+        hanoi(n-1, aux, src, dst);
+    }
+    public static void main(String[] args){
+        System.out.println(movesCount(3)); // 7
+        // hanoi(3,'A','B','C');
+    }
+}
